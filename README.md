@@ -1,4 +1,4 @@
-#Custom Crawler By https://github.com/YoongiKim/AutoCrawler
+# Custom Crawler By https://github.com/YoongiKim/AutoCrawler
 
 # AutoCrawler
 Google, Naver multiprocess image crawler (High Quality & Speed & Customizable)
