@@ -10,44 +10,51 @@ Google, Naver multiprocess image crawler (High Quality & Speed & Customizable)
 
 default : install python, pip
 
-1. Install Chrome
+1. Install Chrome // 크롬 웹브라우저 필요
 
-2. pip install -r requirements.txt
-
-3. Write search keywords in keywords.txt
-
-4. **Run "main.py"** 
+2. python package download // 크롤러에서 필요한 패키지 다운로드 * python, pip 필요
 ``` bash
+pip install -r requirements.txt
+or
+pip3 install -r requirements.txt
+```
+
+3. Write search keywords in keywords.txt // keywords 텍스트 파일에 검색할 키워드 작성
+
+4. **Run "main.py"** // 크롤러를 받은 폴더에서 main.py 실행
+``` bash
+python main.py
+or
 python3 main.py
 ```
 
 5. Files will be downloaded to 'download' directory.
 
 
-# Arguments
+# Option 옵션 사용
 usage:
 ```
 python3 main.py [--skip true] [--threads 4] [--google true] [--naver true] [--full false] [--face false] [--no_gui auto] [--limit 0]
 ```
 
 ```
---skip true        Skips keyword if downloaded directory already exists. This is needed when re-downloading.
+--skip true        Skips keyword if downloaded directory already exists. This is needed when re-downloading. // 이미 다운로드된 키워드 크롤링 제외
 
 --threads 4        Number of threads to download.
 
---google true      Download from google.com (boolean)
+--google true      Download from google.com (boolean) // 구글 검색 사용
 
---naver true       Download from naver.com (boolean)
+--naver true       Download from naver.com (boolean) // 네이버 검색 사용
 
 --full false       Download full resolution image instead of thumbnails (slow)
 
---face false       Face search mode
+--face false       Face search mode 
 
 --no_gui auto      No GUI mode. (headless mode) Acceleration for full_resolution mode, but unstable on thumbnail mode.
                    Default: "auto" - false if full=false, true if full=true
                    (can be used for docker linux system)
                    
---limit 0          Maximum count of images to download per site. (0: infinite)
+--limit 0          Maximum count of images to download per site. (0: infinite) // 이미지 다운로드 수 설정 0=제한없음
 --proxy-list ''    The comma separated proxy list like: "socks://127.0.0.1:1080,http://127.0.0.1:1081".
                    Every thread will randomly choose one from the list.
 ```
